@@ -35,9 +35,6 @@
 //     return view('pages.company_reg');
 // });
 
-Route::get('/navbar', function () {
-    return view('layouts.newapp');
-});
 
 
 #Route::resource('Register', 'register');
@@ -48,10 +45,15 @@ Route::get('/candidate_reg', 'PagesController@candidate_reg');
 Route::get('/company_reg', 'PagesController@company_reg');
 Route::get('/login', 'PagesController@login');
 Route::get('/candidates', 'PagesController@candidates');
-//Route::get('/companies', 'PagesController@companies');
+Route::get('/companies', 'PagesController@companies');
 
 Route::resource('companies', 'CompaniesController');
+Route::resource('candidates', 'CandidatesController');
 Auth::routes();
+Route::get('/navbar', function () {
+    return view('layouts.newapp');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/calendar', 'KumbushaController@get_calendar');
+
+// Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/calendar', 'KumbushaController@get_calendar');
